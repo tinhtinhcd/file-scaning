@@ -1,4 +1,4 @@
-package demo.file.scanner.service;
+package demo.file.scanner.component;
 
 public interface CommandHelper {
     void listCommand();

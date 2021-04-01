@@ -1,10 +1,12 @@
-package demo.file.scanner.service.impl;
+package demo.file.scanner.component.impl;
 
-import demo.file.scanner.service.FileHelper;
+import demo.file.scanner.component.FileHelper;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 
+@Component
 public class FileHelperImpl implements FileHelper {
 
     @Override

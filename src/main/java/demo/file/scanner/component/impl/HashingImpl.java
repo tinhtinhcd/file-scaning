@@ -1,9 +1,11 @@
-package demo.file.scanner.service.impl;
+package demo.file.scanner.component.impl;
 
-import demo.file.scanner.service.Hashing;
+import demo.file.scanner.component.Hashing;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
 
+@Component
 public class HashingImpl implements Hashing {
 
     @Override

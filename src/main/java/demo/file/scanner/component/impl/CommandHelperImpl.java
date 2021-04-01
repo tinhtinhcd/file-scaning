@@ -1,7 +1,9 @@
-package demo.file.scanner.service.impl;
+package demo.file.scanner.component.impl;
 
-import demo.file.scanner.service.CommandHelper;
+import demo.file.scanner.component.CommandHelper;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CommandHelperImpl implements CommandHelper {
 
     @Override

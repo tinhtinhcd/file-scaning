@@ -1,4 +1,4 @@
-package demo.file.scanner.service;
+package demo.file.scanner.component;
 
 import java.io.File;
 import java.io.FileNotFoundException;
