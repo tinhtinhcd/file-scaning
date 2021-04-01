@@ -1,9 +1,9 @@
-package demo.file.scanner.component.impl;
+package demo.file.scanner.filescanner.component.impl;
 
-import demo.file.scanner.component.FileHelper;
-import demo.file.scanner.component.FileLookup;
-import demo.file.scanner.component.Hashing;
-import demo.file.scanner.component.Upload;
+import demo.file.scanner.filescanner.component.FileHelper;
+import demo.file.scanner.filescanner.component.FileLookup;
+import demo.file.scanner.filescanner.component.Hashing;
+import demo.file.scanner.filescanner.component.Uploader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +11,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 @Component
-public class UploadImpl implements Upload {
+public class UploadImpl implements Uploader {
 
     private FileLookup fileLookup;
     private Hashing hashing;
@@ -34,16 +34,18 @@ public class UploadImpl implements Upload {
             uploadFile(f);
         } catch (FileNotFoundException e) {
             System.out.println("File not found: " + e.getMessage() +"\n");
+        }catch (Exception ex){
+            System.out.println(ex.getMessage() +"\n");
         }
     }
 
     private String hash(File input) {
         System.out.println("hashing ...");
-
         return hashing.hash(input);
     }
 
     private void lookup(String fileHashing){
+        System.out.println("lookup file: " + fileHashing);
         fileLookup.lookup(fileHashing);
     }
 

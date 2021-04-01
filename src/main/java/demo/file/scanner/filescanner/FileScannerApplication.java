@@ -1,11 +1,15 @@
-package demo.file.scanner;
+package demo.file.scanner.filescanner;
 
-import demo.file.scanner.component.CommandHelper;
-import demo.file.scanner.component.Upload;
+import demo.file.scanner.filescanner.component.CommandHelper;
+import demo.file.scanner.filescanner.component.Uploader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Scanner;
 
@@ -16,7 +20,7 @@ public class FileScannerApplication implements CommandLineRunner {
 	CommandHelper commandHelper;
 
 	@Autowired
-	Upload upload;
+	Uploader uploader;
 
 	public static void main(String[] args) {
 		SpringApplication.run(FileScannerApplication.class, args);
@@ -33,7 +37,7 @@ public class FileScannerApplication implements CommandLineRunner {
 				System.exit(0);
 
 			else if(s.startsWith("upload")||s.startsWith("Upload")||s.startsWith("-u")){
-				upload.upload(s);
+				uploader.upload(s);
 			}
 
 			else {
@@ -43,4 +47,13 @@ public class FileScannerApplication implements CommandLineRunner {
 
 		}
 	}
+
+	@Bean
+	RestTemplate restTemplate() {
+		RestTemplate restTemplate = new RestTemplate();
+		restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+		restTemplate.getMessageConverters().add(new StringHttpMessageConverter());
+		return restTemplate;
+	}
+
 }

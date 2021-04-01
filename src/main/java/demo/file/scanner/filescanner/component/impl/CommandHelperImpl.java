@@ -1,6 +1,6 @@
-package demo.file.scanner.component.impl;
+package demo.file.scanner.filescanner.component.impl;
 
-import demo.file.scanner.component.CommandHelper;
+import demo.file.scanner.filescanner.component.CommandHelper;
 import org.springframework.stereotype.Component;
 
 @Component

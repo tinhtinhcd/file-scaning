@@ -1,4 +1,4 @@
-package demo.file.scanner.component;
+package demo.file.scanner.filescanner.component;
 
 public interface FileLookup {
     String lookup(String fileHashing);
