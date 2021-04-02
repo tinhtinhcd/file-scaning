@@ -12,6 +12,9 @@ import java.security.MessageDigest;
 @Component
 public class HashingImpl implements Hashing {
 
+    /**
+     * Hashing file using MD5
+     * */
     @Override
     public String hash(File input) {
         String rs = "";

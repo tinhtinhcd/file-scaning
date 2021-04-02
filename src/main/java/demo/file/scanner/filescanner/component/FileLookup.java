@@ -1,5 +1,7 @@
 package demo.file.scanner.filescanner.component;
 
 public interface FileLookup {
-    String lookup(String fileHashing);
+
+    boolean isFileExist();
+    void lookup(String fileHashing);
 }

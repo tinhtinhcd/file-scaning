@@ -26,6 +26,13 @@ public class FileScannerApplication implements CommandLineRunner {
 		SpringApplication.run(FileScannerApplication.class, args);
 	}
 
+
+	/**
+	 * application listen to the input from command line.
+	 * if command start with exit or -e then terminate the application
+	 * if command start with upload or -u then validate, lookup and upload.
+	 * or else show the command helper.
+	 */
 	@Override
 	public void run(String... args) {
 		commandHelper.listCommand();
@@ -48,6 +55,9 @@ public class FileScannerApplication implements CommandLineRunner {
 		}
 	}
 
+	/**
+	 * create bean for restTemplate that using by lookup and upload
+	 * */
 	@Bean
 	RestTemplate restTemplate() {
 		RestTemplate restTemplate = new RestTemplate();
