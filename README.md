@@ -15,7 +15,7 @@ Calculate the hash of the given samplefile.txt
 - Display results in format below
 - You should also have some basic error handling for common HTTP results, but its not necessary to account for every idiosyncrasy of our API. You can show any errors to the standard error and exit the application.
 
-**To running the application:**
+**Running the application:**
 - checkout source code.
 - using maven command: 'mvn clean install' to build and package applications. Please make sure you have JDK 8+.
 - config the apikey in your environment variable : opswat-apikey-demo-scan-file={your apikey}
